@@ -35,6 +35,25 @@ class TestMathematics(unittest.TestCase):
         self.assertEqual(mathematics.pie(2), 4)
         self.assertEqual(mathematics.pie(10), 56)
         self.assertEqual(mathematics.pie(-112313210), None)
+
+    def test_powerof(self):
+        # ei katnud self.assertEqual(mathematics.powerof(-3, -3), -1/27)
+        self.assertEqual(mathematics.powerof(4, 2), 16)
+        self.assertEqual(mathematics.powerof(7, 1), 7)
+        self.assertEqual(mathematics.powerof(8, 0), 1)
+        self.assertEqual(mathematics.powerof(0, 2), 0)
+
+    def test_arrayof(self):
+        self.assertEqual(mathematics.arrayof(2, 3), [1, 2, 4, 8])
+        self.assertEqual(mathematics.arrayof(4, 4), [1, 4, 16, 64, 256])
+        self.assertEqual(mathematics.arrayof(8, 0), [1])
+        self.assertEqual(mathematics.arrayof(0, 2), [1, 0, 0])
+
+    def factorial(self):
+        self.assertEqual(mathematics.factorial(4, 24))
+        self.assertEqual(mathematics.factorial(7, 5040))
+        self.assertEqual(mathematics.factorial(8, 40320))
+        self.assertEqual(mathematics.factorial(0, 1))
         
 if __name__=='__main__':
     unittest.main()

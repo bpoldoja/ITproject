@@ -48,6 +48,7 @@ def divide(x, y):
 def hashing(x):
     """
     Input hashing dependant on the length of the input
+
     """
     x = x.encode(encoding='UTF-8')
     if len(x) < 5:
@@ -72,6 +73,7 @@ def hashing(x):
 def fib(n):
     """
     Fibonacci sequence calculator
+
     """
     if n < 0:
         return None
@@ -84,7 +86,10 @@ def fib(n):
         
 def pie(n):
     """
-    The Lazy Caterer’s Sequence -  describes the maximum number of pieces (or bounded/unbounded regions) of a circle (a pancake or pizza is usually used to describe the situation) that can be made with a given number of straight cuts.
+    The Lazy Caterer’s Sequence -  describes the maximum number of pieces (or bounded/unbounded regions)
+    of a circle (a pancake or pizza is usually used to describe the situation) that can be made with a 
+    given number of straight cuts.
+
     """
 
     if n < 0:
@@ -94,31 +99,49 @@ def pie(n):
     
     return piece_count 
    
+
+def powerof(base, maxi):
+    """
+    Calculates the power of numbers
+
+    """
+    counter = 1
+    res = base 
+    if maxi == 0:
+        return 1
+
+    while counter < maxi:
+        counter = counter + 1
+        res = multiply(res, base)
+
    
-"""
-print("Select operation.")
-print("1.Add")
-print("2.Subtract")
-print("3.Multiply")
-print("4.Divide")
+    return res
 
-# Take input from the user 
-choice = input("Enter choice(1/2/3/4):")
+def arrayof(base, maxi):
+    """
+    Shows all the temporary values of taking to the power of given value
 
-num1 = int(input("Enter first number: "))
-num2 = int(input("Enter second number: "))
+    """
 
-if choice == '1':
-   print(num1,"+",num2,"=", add(num1,num2))
+    counter = 0
+    array = []
 
-elif choice == '2':
-   print(num1,"-",num2,"=", subtract(num1,num2))
+    while counter <= maxi:
+         array.append(powerof(base, counter))
+         counter = counter + 1
 
-elif choice == '3':
-   print(num1,"*",num2,"=", multiply(num1,num2))
+    return array
 
-elif choice == '4':
-   print(num1,"/",num2,"=", divide(num1,num2))
-else:
-   print("Invalid input")
-"""
+def factorial(n):
+    """
+    Calculates the factorial of a number
+    
+    """
+    num = 1
+
+    while n >= 1:
+        num = num * n
+        n = n - 1
+
+    return num
+    
