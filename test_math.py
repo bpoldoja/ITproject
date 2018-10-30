@@ -6,6 +6,11 @@ class TestMathematics(unittest.TestCase):
         self.assertEqual(mathematics.add(10,5), 15)
         self.assertEqual(mathematics.add(-1,1), 0)
         self.assertEqual(mathematics.add(3.31,5), 8.31)
+
+    def test_subtract(self):
+        self.assertEqual(mathematics.subtract(10,5), 5)
+        self.assertEqual(mathematics.subtract(-1,-1), 0)
+        self.assertEqual(mathematics.subtract(3.4,5), -1.6)
         
     def test_multiply(self):
         self.assertEqual(mathematics.multiply(10,5), 50)
@@ -14,6 +19,14 @@ class TestMathematics(unittest.TestCase):
         self.assertEqual(mathematics.multiply(0,0), 0)
         self.assertEqual(mathematics.multiply(0,1), 0)
         self.assertEqual(mathematics.multiply(1,0), 0)
+
+    def test_divide(self):
+        self.assertEqual(mathematics.divide(10,5), 2)
+        self.assertEqual(mathematics.divide(-3,1), -3)
+        self.assertEqual(mathematics.divide(45,0), None)
+        self.assertEqual(mathematics.divide(0,0), None)
+        self.assertEqual(mathematics.divide(0,1), 0)
+        self.assertEqual(mathematics.divide(4,3.6), 1.1111111111111112)
         
     def test_hashing(self):
         self.assertEqual(mathematics.hashing('Lore'), '730949e23ca46f310466fbf205ffb165aef1fd7b')
@@ -37,7 +50,6 @@ class TestMathematics(unittest.TestCase):
         self.assertEqual(mathematics.pie(-112313210), None)
 
     def test_powerof(self):
-        # ei katnud self.assertEqual(mathematics.powerof(-3, -3), -1/27)
         self.assertEqual(mathematics.powerof(4, 2), 16)
         self.assertEqual(mathematics.powerof(7, 1), 7)
         self.assertEqual(mathematics.powerof(8, 0), 1)
@@ -49,11 +61,11 @@ class TestMathematics(unittest.TestCase):
         self.assertEqual(mathematics.arrayof(8, 0), [1])
         self.assertEqual(mathematics.arrayof(0, 2), [1, 0, 0])
 
-    def factorial(self):
-        self.assertEqual(mathematics.factorial(4, 24))
-        self.assertEqual(mathematics.factorial(7, 5040))
-        self.assertEqual(mathematics.factorial(8, 40320))
-        self.assertEqual(mathematics.factorial(0, 1))
+    def test_factorial(self):
+        self.assertEqual(mathematics.factorial(4), 24)
+        self.assertEqual(mathematics.factorial(7), 5040)
+        self.assertEqual(mathematics.factorial(8), 40320)
+        self.assertEqual(mathematics.factorial(0), 1)
         
 if __name__=='__main__':
     unittest.main()

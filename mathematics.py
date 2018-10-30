@@ -43,7 +43,9 @@ def multiply(x, y):
 
 # This function divides two numbers
 def divide(x, y):
-   return x / y
+    try: return x / y
+    except ZeroDivisionError:
+        return None
    
 def hashing(x):
     """
