@@ -146,4 +146,60 @@ def factorial(n):
         n = n - 1
 
     return num
+
+
     
+# Take input from the user 
+choice = input("Enter choice(1/2/3/4/5/6/7/8/9/10):")
+
+if choice == '1':
+   num1 = int(input("Enter first number: "))
+   num2 = int(input("Enter second number: ")) 
+   print(num1,"+",num2,"=", add(num1,num2))
+
+elif choice == '2':
+   num1 = int(input("Enter first number: "))
+   num2 = int(input("Enter second number: "))
+   print(num1,"-",num2,"=", subtract(num1,num2))
+
+elif choice == '3':
+   num1 = int(input("Enter first number: "))
+   num2 = int(input("Enter second number: ")) 
+   print(num1,"*",num2,"=", multiply(num1,num2))
+
+elif choice == '4':
+   num1 = int(input("Enter first number: "))
+   num2 = int(input("Enter second number: ")) 
+   print(num1,"/",num2,"=", divide(num1,num2))
+
+elif choice == '5':
+   txt = input("Enter text: ") 
+   print("Text:",txt, hashing(txt))
+
+elif choice == '6':
+   num3 = int(input("Enter number: "))
+   print("Fibonacci:",num3,"=", fib(num3))
+
+elif choice == '7':
+   num3 = int(input("Enter number: ")) 
+   print("Pie:",num3,"is", pie(num3))
+
+elif choice == '8':
+   num1 = int(input("Enter first number: "))
+   num2 = int(input("Enter second number: ")) 
+   print("Power of",num1,"^", num2,"=",powerof(num1,num2))
+
+elif choice == '9':
+   num1 = int(input("Enter first number: "))
+   num2 = int(input("Enter second number: ")) 
+   print("Array of",num1,"^", num2,"=", arrayof(num1,num2))
+
+elif choice == '10':
+   num3 = int(input("Enter number: "))  
+   print("Factorial",num3,"is", factorial(num3))
+else:
+   print("Invalid input")
+
+
+
+              
